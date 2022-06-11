@@ -6,15 +6,14 @@ use App\Models\Agenda;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Kelas extends Model
+class Mapel extends Model
 {
     use HasFactory;
-    protected $table = 'kelas';
-    protected $fillable = ['nama_kelas','walas'];
+    protected $table = 'mapel';
+    protected $fillable = ['mata_pelajaran'];
 
     public function agenda()
     {
         return $this->hasOne(Agenda::class);
     }
 }
-

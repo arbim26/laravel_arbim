@@ -6,6 +6,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\agendagurucontroller;
 use App\Http\Controllers\LoginController; 
+use App\Http\Controllers\MapelController; 
 
 
 /*
@@ -31,6 +32,13 @@ Route::get('/logout',[LoginController::class, 'logout']);
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 // Route::post('/registernew', [LoginController::class, 'registernew']);
 Route::post('/registernew',[LoginController::class, 'registernew']);
+
+    // guru
+    Route::get('/mapel',[MapelController::class, 'mapel'])->name('mapel');
+    Route::post('/storemapel',[MapelController::class, 'store']);
+    Route::get('/editmapel{id}',[MapelController::class, 'editmapel']);
+    // Route::put('/updatedata/{id}',[GuruController::class, 'update']);
+    // Route::delete('/delete/{id}',[GuruController::class, 'destroy']);
 
 
 

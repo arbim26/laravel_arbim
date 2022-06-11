@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
-            $table->string('nama_guru');
-            $table->enum('mata_pelajaran', ['IPA', 'IPS', 'B Indonesia', 'PAI', 'B Inggris', 'Matematika']);
+            $table->foreignId('guru_id');
+            $table->foreignId('mapel_id');
             $table->string('materi_pelajaran');
             $table->string('jam_pelajaran');
             $table->text('siswa_absen')->nullable();
-            $table->string('kelas');
+            $table->foreignId('kelas_id');
             $table->enum('jenis_pembelajaran', ['daring','tatap muka']);
             $table->string('link')->nullable();
             $table->string('dokumentasi');

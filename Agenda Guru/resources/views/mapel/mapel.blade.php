@@ -22,10 +22,10 @@
                       @foreach($data as $row)
                         <tr>
                             <td>{{$row->id}}</td>
-                            <td>{{$row->nama_kelas}}</td>
+                            <td>{{$row->mata_pelajaran}}</td>
                             <td>
                               <div class="d-grid gap-4 d-flex justify-content-center">
-                                <a href="/editkelas/{{$row->id}}" class="btn btn-warning" type="button">Edit</a>
+                                <a href="/editmapel/{{$row->id}}" class="btn btn-warning" type="button">Edit</a>
                                   <form action="/deletekelas/{{$row->id}}" method="POST" style="margin-left:5px">
                                     @csrf
                                     @method('delete')
@@ -48,7 +48,7 @@
                 <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tabah Kelas</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Mata Pelajara</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -57,14 +57,14 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                             <div class="card-body">
-                            <form class="forms-sample" action="/storekelas" method="POST">
+                            <form class="forms-sample" action="/storemapel" method="POST">
                                     @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputName1">Nama Kelas</label>
-                                    <input name="nama_kelas" type="text" class="form-control" id="exampleInputName1" placeholder="Nama Kelas">
-                                    @error('nama_kelas')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                    <label for="exampleInputName1">Mata Pelajaran</label>
+                                    <input name="mata_pelajaran" type="text" class="form-control" id="exampleInputName1" placeholder="Mata Pelajran">
+                                    @error('mata_pelajaran')
+                                          <div class="text-danger">{{ $message }}</div>
+                                      @enderror
 
                                     </div>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

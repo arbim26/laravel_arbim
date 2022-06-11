@@ -2,20 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Guru;
+use App\Models\Kelas;
 use App\Models\Agenda;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AgendaController extends Controller
 {
     public function agenda()
     {
         $data = Agenda::orderBy('created_at','desc')->get();
-        return view('agenda.agenda', compact('data'));
+        $kelas = Kelas::all();
+        $guru = Guru::all();
+        return view('agenda.agenda',[
+            'data' => $data,
+            'guru' => $guru,
+            'kelas' => $kelas
+        ]);
+
     }
 
     public function tambahagenda()
-    {
-        return view('agenda.tambahagenda');
+    {   
+        $data = Agenda::orderBy('created_at','desc')->get();
+        $guru = Guru::all();
+        $kelas = Kelas::all();
+        return view('agenda.tambahagenda',[
+            'data' => $data,
+            'guru' => $guru,
+            'kelas' => $kelas
+        ]);
     }
     public function store(Request $request)
     {
