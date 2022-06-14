@@ -18,6 +18,11 @@ class Guru extends Authenticatable
     protected $table = 'guru';
     protected $fillable = ['email','password','nama_guru','nik','mata_pelajaran'];
 
+    public function mapel()
+    {
+        return $this->belongsTo(mapel::class);
+    }
+
     public function agenda()
     {
         return $this->hasOne(Agenda::class);

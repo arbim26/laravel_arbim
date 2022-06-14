@@ -28,17 +28,15 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/postlogin',[LoginController::class, 'postlogin']);
 Route::get('/logout',[LoginController::class, 'logout']);
-
 Route::get('/register', [LoginController::class, 'register'])->name('register');
-// Route::post('/registernew', [LoginController::class, 'registernew']);
 Route::post('/registernew',[LoginController::class, 'registernew']);
 
     // guru
     Route::get('/mapel',[MapelController::class, 'mapel'])->name('mapel');
     Route::post('/storemapel',[MapelController::class, 'store']);
-    Route::get('/editmapel{id}',[MapelController::class, 'editmapel']);
-    // Route::put('/updatedata/{id}',[GuruController::class, 'update']);
-    // Route::delete('/delete/{id}',[GuruController::class, 'destroy']);
+    Route::get('/editmapel/{id}',[MapelController::class, 'editmapel']);
+    Route::put('/updatemapel/{id}',[MapelController::class, 'updatemapel']);
+    Route::delete('/deletemapel/{id}',[MapelController::class, 'destroy']);
 
 
 

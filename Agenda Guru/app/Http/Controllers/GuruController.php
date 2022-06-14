@@ -2,21 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Guru;
+use App\Models\Mapel;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class GuruController extends Controller
 {
     public function guru()
     {
         $data = Guru::orderBy('created_at','desc')->get();
-        return view('guru.guru', compact('data'));
+        $mapel = Mapel::all();
+        return view('guru.guru',[
+            'data' => $data,
+            'mapel' => $mapel
+        ]);
     }
 
 
     public function tambahguru()
     {
-        return view('guru.tambahguru');
+        $data = Guru::orderBy('created_at','desc')->get();
+        $mapel = Mapel::all();
+        return view('guru.tambahguru',[
+            'data' => $data,
+            'mapel' => $mapel
+        ]);
     }
 
     
@@ -24,7 +35,7 @@ class GuruController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required',
             'password'=> 'required',
             'nama_guru'=> 'required',
             'nik'=> 'required',
@@ -42,9 +53,12 @@ class GuruController extends Controller
 
     public function editguru($id)
     {
-        $data = Guru::find ($id);
-
-        return view('guru.editguru', compact('data'));
+        $data = Guru::find($id);
+        $mapel = Mapel::all();
+        return view('guru.editguru',[
+            'data' => $data,
+            'mapel' => $mapel
+        ]);;
     }
 
     public function update(Request $request, $id)

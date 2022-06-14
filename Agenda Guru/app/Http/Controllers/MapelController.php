@@ -23,9 +23,26 @@ class MapelController extends Controller
         return redirect()->route('mapel');
     }
 
-    public function editmaple($id)
+    public function editmapel($id)
     {
-        $data = Maple::find ($id);
+        $data = Mapel::find ($id);
        return view('mapel.editmapel', compact('data'));
+    }
+
+    public function updatemapel(Request $request, $id)
+    {
+        $this->validate($request, [
+            'mata_pelajaran'=> 'required',
+        ]);
+        $data = Mapel::find ($id);
+        $data->update($request->all());
+        return redirect()->route('mapel');
+    }
+
+    public function destroy($id)
+    {
+        $data = Mapel::find($id);
+        $data->delete();
+        return redirect()->route('mapel');         
     }
 }

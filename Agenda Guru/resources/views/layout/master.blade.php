@@ -17,12 +17,14 @@
   <link rel="stylesheet" href="../assets/template/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" type="text/css" href="../assets/template/js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- inject:css -->
   <link rel="stylesheet" href="../assets/template/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <!-- <link rel="shortcut icon" href="../assets/template/images/favicon.png" /> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   
 </head>
 <body>
@@ -109,6 +111,13 @@
             <a class="nav-link" href="/agenda">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Agenda</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/mapel">
+              <i class="icon-columns menu-icon"></i>
+              <span class="menu-title">Mata Pelajaran</span>
             </a>
           </li>
 

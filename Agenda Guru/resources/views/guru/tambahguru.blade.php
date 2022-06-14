@@ -40,19 +40,13 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Mata Pelajaran</label>
-                        <select name="mata_pelajaran" class="form-control" id="exampleSelectGender">
-                          <option value="1">IPA</option>
-                          <option value="2">IPS</option>
-                          <option value="3">B Indonesia</option>
-                          <option value="4">PAI</option>
-                          <option value="5">B Inggris</option>
-                          <option value="6">Matematika</option>
+                    <div class="mb-3">
+                        <label for="mapel" class="form-label">Mata Pelajaran</label>
+                        <select class="form-select" name="mapel_id" id="mapel">
+                            @foreach ($mapel as $mapels)
+                                <option value="{{ $mapels->id }}">{{ $mapels->mata_pelajaran }}</option>
+                            @endforeach
                         </select>
-                        @error('mata_pelajaran')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
                     </div>
 
                     <button type="submit" name="submit" value="save" class="btn btn-primary mr-2">Submit</button>

@@ -12,21 +12,21 @@ class Agenda extends Model
 {
     use HasFactory;
     protected $table = 'agenda';
-    protected $fillable = ['tanggal','nama_guru','mata_pelajaran','materi_pelajaran','jam_pelajaran','siswa_absen','kelas','jenis_pembelajaran','link','dokumentasi','keterangan'];
+    protected $guarded = [''];
 
     public function guru()
     {
-        return $this->belongTo(guru::class);
+        return $this->belongsTo(guru::class);
     }
 
     public function kelas()
     {
-        return $this->belongTo(kelas::class);
+        return $this->belongsTo(kelas::class);
     }
 
     public function mapel()
     {
-        return $this->belongTo(mapel::class);
+        return $this->belongsTo(mapel::class);
     }
 
 

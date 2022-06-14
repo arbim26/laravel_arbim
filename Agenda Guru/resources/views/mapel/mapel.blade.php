@@ -25,8 +25,8 @@
                             <td>{{$row->mata_pelajaran}}</td>
                             <td>
                               <div class="d-grid gap-4 d-flex justify-content-center">
-                                <a href="/editmapel/{{$row->id}}" class="btn btn-warning" type="button">Edit</a>
-                                  <form action="/deletekelas/{{$row->id}}" method="POST" style="margin-left:5px">
+                              <a href="/editmapel/{{$row->id}}" class="btn btn-warning" type="button">Edit</a>  
+                                  <form action="/deletemapel/{{$row->id}}" method="POST" style="margin-left:5px">
                                     @csrf
                                     @method('delete')
                                     <input type="submit" class="btn btn-danger" value="hapus">

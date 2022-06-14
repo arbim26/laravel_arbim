@@ -9,8 +9,8 @@
                     @csrf
                     @method('put')
                     <div class="form-group">
-                      <label for="exampleInputName1">Username</label>
-                      <input value="{{$data->nata_pelajaran}}" name="nama_kelas" type="text" class="form-control" id="exampleInputName1" placeholder="Username">
+                      <label for="exampleInputName1">Mata Pelajaran</label>
+                      <input value="{{$data->mata_pelajaran}}" name="mata_pelajaran" type="text" class="form-control" id="exampleInputName1" placeholder="Mata Pelajaran">
                       @error('mata_pelajaran')
                         <div class="text-danger">
                             Kolom Belum Di isi

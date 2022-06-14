@@ -4,7 +4,7 @@
     <div class=" grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="text-center">Data Guru</h3>
+                  <h3 class="text-center">Agenda</h3>
                     <a href="/tambahagenda" type="button" class="btn btn-primary btn-md mt-3" >
                         Tambah
                     </a>
@@ -17,9 +17,9 @@
                           <!-- <th>ID</th> -->
                           <th>Tanggal</th>
                           <th>Guru</th>
+                          <th>Kelas</th>  
                           <th>Mapel</th>
                           <th>Jam</th>
-                          <th>Kelas</th>
                           <th>Absen</th>
                           <th>Jenis</th>
                           <th>Dokumentasi</th>
@@ -32,10 +32,10 @@
                         <tr>
                           <!-- <td>{{$row->id}}</td> -->
                           <td>{{$row->tanggal}}</td>
-                          <td>{{$row->nama_guru}}</td>
-                          <td>{{$row->mata_pelajaran}}</td>
+                          <td>{{$row->guru->nama_guru}}</td>
+                          <td>{{$row->kelas->nama_kelas}}</td>
+                          <td>{{$row->mapel->mata_pelajaran}}</td>
                           <td>{{$row->jam_pelajaran}}</td>
-                          <td>{{$row->kelas}}</td>
                           <td>{{$row->siswa_absen}}</td>
                           <td>{{$row->jenis_pembelajaran}}</td>
                           <td>

@@ -16,4 +16,14 @@ class Mapel extends Model
     {
         return $this->hasOne(Agenda::class);
     }
+
+    public function guru()
+    {
+        return $this->belongsTo(guru::class);
+    }
+
+    public function mapel()
+    {
+        return $this->hasOne(guru::class);
+    }
 }

@@ -18,10 +18,10 @@ return new class extends Migration
             $table->date('tanggal');
             $table->foreignId('guru_id');
             $table->foreignId('mapel_id');
+            $table->foreignId('kelas_id');
             $table->string('materi_pelajaran');
             $table->string('jam_pelajaran');
             $table->text('siswa_absen')->nullable();
-            $table->foreignId('kelas_id');
             $table->enum('jenis_pembelajaran', ['daring','tatap muka']);
             $table->string('link')->nullable();
             $table->string('dokumentasi');
